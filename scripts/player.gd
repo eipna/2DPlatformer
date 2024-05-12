@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 
 	if not is_on_floor():
+		animated_sprite_2d.play("jump")
 		velocity.y += gravity * delta
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -27,8 +28,6 @@ func _physics_process(delta):
 			animated_sprite_2d.play("idle")
 		else:
 			animated_sprite_2d.play("run")
-	else:
-		animated_sprite_2d.play("jump")
 	
 	if direction:
 		velocity.x = direction * SPEED

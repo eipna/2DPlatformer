@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://xyf8kqaqbjwk"]
+[gd_scene load_steps=20 format=3 uid="uid://xyf8kqaqbjwk"]
 
 [ext_resource type="PackedScene" uid="uid://dbm5nfk155u3" path="res://scenes/player.tscn" id="1_3pb8n"]
 [ext_resource type="Texture2D" uid="uid://b8r51roakk3cw" path="res://assets/sprites/world_tileset.png" id="2_mvda7"]
@@ -426,6 +426,33 @@ corner_radius_bottom_left = 8
 shadow_color = Color(0, 0, 0, 0.168627)
 shadow_size = 13
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wolgr"]
+bg_color = Color(0.6, 1, 0.658824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(2.11775e-06, 0.915793, 0.594805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id="Animation_xq7fj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(737, 501)]
+}
+
 [sub_resource type="Animation" id="Animation_ykm51"]
 resource_name = "move"
 length = 2.0
@@ -443,7 +470,13 @@ tracks/0/keys = {
 "values": [Vector2(737, 501), Vector2(815, 501)]
 }
 
-[sub_resource type="Animation" id="Animation_xq7fj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxufd"]
+_data = {
+"RESET": SubResource("Animation_xq7fj"),
+"move": SubResource("Animation_ykm51")
+}
+
+[sub_resource type="Animation" id="Animation_qgoew"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -455,13 +488,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(737, 501)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxufd"]
-_data = {
-"RESET": SubResource("Animation_xq7fj"),
-"move": SubResource("Animation_ykm51")
+"values": [Vector2(993, 485)]
 }
 
 [sub_resource type="Animation" id="Animation_qbegl"]
@@ -479,21 +506,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(993, 485), Vector2(993, 341)]
-}
-
-[sub_resource type="Animation" id="Animation_qgoew"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(993, 485)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vogj3"]
@@ -553,6 +565,27 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_d8y80")
 theme_override_font_sizes/font_size = 24
 text = "COINS: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlimesPanel" type="Panel" parent="GameManager/CanvasLayer/ScorePanel"]
+layout_mode = 1
+offset_top = 93.0
+offset_right = 259.0
+offset_bottom = 147.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wolgr")
+
+[node name="SlimesText" type="Label" parent="GameManager/CanvasLayer/ScorePanel/SlimesPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_d8y80")
+theme_override_font_sizes/font_size = 16
+text = "SLIMES: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
