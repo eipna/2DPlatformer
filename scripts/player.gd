@@ -1,33 +1,32 @@
 extends CharacterBody2D
 
-const SPEED = 80.0
-const JUMP_VELOCITY = -260.0
+const SPEED: int = 80.0
+const JUMP_VELOCITY: int = -260.0
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var jump = $Jump
 
 func _physics_process(delta):
 
 	if not is_on_floor():
-		animated_sprite_2d.play("jump")
+		$AnimatedSprite2D.play("jump")
 		velocity.y += gravity * delta
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		jump.play()
+		$Jump.play()
 
 	var direction = Input.get_axis("move_left", "move_right")
 	
 	if direction < 0:
-		animated_sprite_2d.flip_h = true
+		$AnimatedSprite2D.flip_h = true
 	elif direction > 0:
-		animated_sprite_2d.flip_h = false
+		$AnimatedSprite2D.flip_h = false
 		
 	if is_on_floor():
 		if direction == 0:
-			animated_sprite_2d.play("idle")
+			$AnimatedSprite2D.play("idle")
 		else:
-			animated_sprite_2d.play("run")
+			$AnimatedSprite2D.play("run")
 	
 	if direction:
 		velocity.x = direction * SPEED
