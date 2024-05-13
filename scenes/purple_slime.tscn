@@ -1,40 +1,40 @@
-[gd_scene load_steps=15 format=3 uid="uid://c42c8pvpytmys"]
+[gd_scene load_steps=15 format=3 uid="uid://b700vtxncfk4f"]
 
-[ext_resource type="Script" path="res://scripts/slime.gd" id="1_p10bw"]
-[ext_resource type="Texture2D" uid="uid://seu561qeoecy" path="res://assets/sprites/slime_green.png" id="2_8ybus"]
-[ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="3_rk3wy"]
-[ext_resource type="AudioStream" uid="uid://b1idd57h11h5p" path="res://assets/sounds/explosion.wav" id="4_qyk7q"]
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_5phi0"]
+[ext_resource type="Texture2D" uid="uid://dx8dl8wcisdds" path="res://assets/sprites/slime_purple.png" id="2_4ke4e"]
+[ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="3_t8jsh"]
+[ext_resource type="AudioStream" uid="uid://b1idd57h11h5p" path="res://assets/sounds/explosion.wav" id="4_tfo0o"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yl2g2"]
-atlas = ExtResource("2_8ybus")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ktjr"]
+atlas = ExtResource("2_4ke4e")
 region = Rect2(0, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_47g75"]
-atlas = ExtResource("2_8ybus")
+[sub_resource type="AtlasTexture" id="AtlasTexture_djiiw"]
+atlas = ExtResource("2_4ke4e")
 region = Rect2(24, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_841vo"]
-atlas = ExtResource("2_8ybus")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfbrf"]
+atlas = ExtResource("2_4ke4e")
 region = Rect2(48, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mlomc"]
-atlas = ExtResource("2_8ybus")
+[sub_resource type="AtlasTexture" id="AtlasTexture_24j8n"]
+atlas = ExtResource("2_4ke4e")
 region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y5b6i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yl2g2")
+"texture": SubResource("AtlasTexture_4ktjr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_47g75")
+"texture": SubResource("AtlasTexture_djiiw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_841vo")
+"texture": SubResource("AtlasTexture_gfbrf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mlomc")
+"texture": SubResource("AtlasTexture_24j8n")
 }],
 "loop": true,
 "name": &"idle",
@@ -186,6 +186,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("KillZone/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ypi4x"]
 _data = {
@@ -193,14 +205,14 @@ _data = {
 "explode": SubResource("Animation_oex8s")
 }
 
-[node name="GreenSlime" type="Node2D"]
-script = ExtResource("1_p10bw")
+[node name="PurpleSlime" type="Node2D"]
+script = ExtResource("1_5phi0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y5b6i")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.0708082
+frame_progress = 0.883766
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, 6)
@@ -210,12 +222,11 @@ target_position = Vector2(8, 0)
 position = Vector2(0, 6)
 target_position = Vector2(-8, 0)
 
-[node name="KillZone" parent="." instance=ExtResource("3_rk3wy")]
+[node name="KillZone" parent="." instance=ExtResource("3_t8jsh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_xfc4c")
-disabled = true
 
 [node name="ExplodeTrigger" type="Area2D" parent="."]
 collision_mask = 2
@@ -225,7 +236,7 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_a3l8h")
 
 [node name="Explode" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_qyk7q")
+stream = ExtResource("4_tfo0o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

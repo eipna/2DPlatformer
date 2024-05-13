@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dbm5nfk155u3" path="res://scenes/player.tscn" id="1_3pb8n"]
 [ext_resource type="Texture2D" uid="uid://b8r51roakk3cw" path="res://assets/sprites/world_tileset.png" id="2_mvda7"]
-[ext_resource type="PackedScene" uid="uid://bkut8bq3mfpev" path="res://scenes/platform.tscn" id="3_h1dui"]
+[ext_resource type="PackedScene" uid="uid://bkut8bq3mfpev" path="res://scenes/platforms/platform_green.tscn" id="3_h1dui"]
 [ext_resource type="PackedScene" uid="uid://dbkbagbwaw7ge" path="res://scenes/coin.tscn" id="4_2ctfm"]
 [ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="5_md0lt"]
 [ext_resource type="PackedScene" uid="uid://c42c8pvpytmys" path="res://scenes/green_slime.tscn" id="6_o1ek2"]
@@ -520,7 +520,7 @@ _data = {
 
 [node name="Player" parent="." instance=ExtResource("1_3pb8n")]
 z_index = 2
-position = Vector2(306, 543)
+position = Vector2(313, 548)
 
 [node name="Camera" type="Camera2D" parent="Player"]
 position = Vector2(0, 5)
