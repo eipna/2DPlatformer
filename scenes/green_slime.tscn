@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfc4c"]
-size = Vector2(14, 9)
+size = Vector2(14, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3l8h"]
 size = Vector2(8, 3)
@@ -213,7 +213,7 @@ target_position = Vector2(-8, 0)
 [node name="KillZone" parent="." instance=ExtResource("3_rk3wy")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(0, 6.5)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_xfc4c")
 disabled = true
 

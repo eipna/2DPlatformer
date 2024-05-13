@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dbkbagbwaw7ge"]
+[gd_scene load_steps=22 format=3 uid="uid://dbkbagbwaw7ge"]
 
 [ext_resource type="Script" path="res://scripts/coin.gd" id="1_6ie0i"]
 [ext_resource type="Texture2D" uid="uid://cbl8t7wh25xua" path="res://assets/sprites/coin.png" id="1_vxm3w"]
@@ -197,6 +197,10 @@ _data = {
 "pickup": SubResource("Animation_tewk7")
 }
 
+[sub_resource type="Curve" id="Curve_tuh8x"]
+_data = [Vector2(0.0337079, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.197802), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Coin" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_6ie0i")
@@ -217,5 +221,20 @@ bus = &"SFX"
 libraries = {
 "": SubResource("AnimationLibrary_2u83t")
 }
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_tuh8x")
+color = Color(1, 1, 0.32549, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
