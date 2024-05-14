@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="3_70om3"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="4_xqs5m"]
 [ext_resource type="FontFile" uid="uid://btfuq7we3twcg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_3wu41"]
-[ext_resource type="PackedScene" uid="uid://b700vtxncfk4f" path="res://scenes/purple_slime.tscn" id="7_0x8iw"]
+[ext_resource type="PackedScene" uid="uid://b700vtxncfk4f" path="res://scenes/enemies/purple_slime.tscn" id="7_0x8iw"]
 [ext_resource type="PackedScene" uid="uid://dbkbagbwaw7ge" path="res://scenes/coin.tscn" id="7_gvh12"]
 [ext_resource type="PackedScene" uid="uid://bppwq3yh73wi7" path="res://scenes/platforms/platform_beige.tscn" id="8_1qabn"]
 [ext_resource type="PackedScene" uid="uid://cu6ajsq07eskn" path="res://scenes/fruits/fruit_yellow.tscn" id="9_5owrw"]

@@ -1,0 +1,165 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3u04308b6wde"]
+
+[ext_resource type="FontFile" uid="uid://btfuq7we3twcg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_douio"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_jeqqm"]
+[ext_resource type="FontFile" uid="uid://dd5ytimvbfjgs" path="res://assets/fonts/PixelOperator8.ttf" id="2_sgknr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usaq4"]
+bg_color = Color(1, 0.802612, 0.720955, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(1, 0.626469, 0.442048, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orml3"]
+bg_color = Color(0.180005, 0.180005, 0.180005, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.973586, 0.363242, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv6vy"]
+bg_color = Color(0.933333, 0.823529, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.117647)
+shadow_size = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p5l3"]
+bg_color = Color(0.750997, 0.661451, 7.70092e-07, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.117647)
+shadow_size = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo67v"]
+bg_color = Color(0.555936, 0.488062, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.117647)
+shadow_size = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpr4g"]
+bg_color = Color(0.993382, 0.12552, 0.0368864, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18fn8"]
+bg_color = Color(0.713726, 0.12549, 0.0352941, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owo3q"]
+bg_color = Color(0.596078, 0.12549, 0.0352941, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 13
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jeqqm")
+
+[node name="panel_menu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usaq4")
+
+[node name="panel_title" type="Panel" parent="panel_menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -281.0
+offset_top = 44.0
+offset_right = 281.0
+offset_bottom = 172.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_orml3")
+
+[node name="title" type="Label" parent="panel_menu/panel_title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_douio")
+theme_override_font_sizes/font_size = 56
+text = "DAY DREAM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play" type="Button" parent="panel_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -35.0
+offset_right = 92.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sgknr")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_yv6vy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2p5l3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fo67v")
+text = "PLAY"
+
+[node name="quit" type="Button" parent="panel_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 53.0
+offset_right = 76.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sgknr")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_kpr4g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_18fn8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_owo3q")
+text = "QUIT"
+
+[connection signal="pressed" from="panel_menu/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="panel_menu/quit" to="." method="_on_quit_pressed"]

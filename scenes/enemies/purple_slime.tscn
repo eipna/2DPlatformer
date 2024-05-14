@@ -1,25 +1,25 @@
 [gd_scene load_steps=16 format=3 uid="uid://b700vtxncfk4f"]
 
-[ext_resource type="Script" path="res://scripts/slime.gd" id="1_5phi0"]
-[ext_resource type="Texture2D" uid="uid://dx8dl8wcisdds" path="res://assets/sprites/slime_purple.png" id="2_4ke4e"]
-[ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="3_t8jsh"]
-[ext_resource type="AudioStream" uid="uid://b1idd57h11h5p" path="res://assets/sounds/explosion.wav" id="4_tfo0o"]
-[ext_resource type="PackedScene" uid="uid://biebqf5ycccm5" path="res://scenes/explosion.tscn" id="5_46vxp"]
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_2lj8w"]
+[ext_resource type="Texture2D" uid="uid://dx8dl8wcisdds" path="res://assets/sprites/slime_purple.png" id="2_klvba"]
+[ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="3_rcb8s"]
+[ext_resource type="AudioStream" uid="uid://b1idd57h11h5p" path="res://assets/sounds/explosion.wav" id="4_v7eaq"]
+[ext_resource type="PackedScene" uid="uid://biebqf5ycccm5" path="res://scenes/explosion.tscn" id="5_my4go"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ktjr"]
-atlas = ExtResource("2_4ke4e")
+atlas = ExtResource("2_klvba")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djiiw"]
-atlas = ExtResource("2_4ke4e")
+atlas = ExtResource("2_klvba")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gfbrf"]
-atlas = ExtResource("2_4ke4e")
+atlas = ExtResource("2_klvba")
 region = Rect2(48, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24j8n"]
-atlas = ExtResource("2_4ke4e")
+atlas = ExtResource("2_klvba")
 region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y5b6i"]
@@ -207,7 +207,7 @@ _data = {
 }
 
 [node name="PurpleSlime" type="Node2D"]
-script = ExtResource("1_5phi0")
+script = ExtResource("1_2lj8w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y5b6i")
@@ -223,7 +223,7 @@ target_position = Vector2(8, 0)
 position = Vector2(0, 6)
 target_position = Vector2(-8, 0)
 
-[node name="KillZone" parent="." instance=ExtResource("3_t8jsh")]
+[node name="KillZone" parent="." instance=ExtResource("3_rcb8s")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(0, 7)
@@ -237,14 +237,14 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_a3l8h")
 
 [node name="Explode" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_tfo0o")
+stream = ExtResource("4_v7eaq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ypi4x")
 }
 
-[node name="CPUParticles2D" parent="." instance=ExtResource("5_46vxp")]
+[node name="CPUParticles2D" parent="." instance=ExtResource("5_my4go")]
 color = Color(0.502187, 0.23332, 0.615486, 1)
 
 [connection signal="body_entered" from="ExplodeTrigger" to="." method="_on_explode_trigger_body_entered"]
