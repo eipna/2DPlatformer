@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b700vtxncfk4f"]
+[gd_scene load_steps=16 format=3 uid="uid://b700vtxncfk4f"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_5phi0"]
 [ext_resource type="Texture2D" uid="uid://dx8dl8wcisdds" path="res://assets/sprites/slime_purple.png" id="2_4ke4e"]
 [ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="3_t8jsh"]
 [ext_resource type="AudioStream" uid="uid://b1idd57h11h5p" path="res://assets/sounds/explosion.wav" id="4_tfo0o"]
+[ext_resource type="PackedScene" uid="uid://biebqf5ycccm5" path="res://scenes/explosion.tscn" id="5_46vxp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ktjr"]
 atlas = ExtResource("2_4ke4e")
@@ -45,7 +46,7 @@ animations = [{
 size = Vector2(14, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3l8h"]
-size = Vector2(8, 3)
+size = Vector2(6, 3)
 
 [sub_resource type="Animation" id="Animation_i405r"]
 length = 0.001
@@ -242,5 +243,8 @@ stream = ExtResource("4_tfo0o")
 libraries = {
 "": SubResource("AnimationLibrary_ypi4x")
 }
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("5_46vxp")]
+color = Color(0.502187, 0.23332, 0.615486, 1)
 
 [connection signal="body_entered" from="ExplodeTrigger" to="." method="_on_explode_trigger_body_entered"]

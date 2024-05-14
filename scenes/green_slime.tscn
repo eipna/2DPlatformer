@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://c42c8pvpytmys"]
+[gd_scene load_steps=16 format=3 uid="uid://c42c8pvpytmys"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_p10bw"]
 [ext_resource type="Texture2D" uid="uid://seu561qeoecy" path="res://assets/sprites/slime_green.png" id="2_8ybus"]
 [ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="3_rk3wy"]
 [ext_resource type="AudioStream" uid="uid://b1idd57h11h5p" path="res://assets/sounds/explosion.wav" id="4_qyk7q"]
+[ext_resource type="PackedScene" uid="uid://biebqf5ycccm5" path="res://scenes/explosion.tscn" id="5_josu3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yl2g2"]
 atlas = ExtResource("2_8ybus")
@@ -45,7 +46,7 @@ animations = [{
 size = Vector2(14, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3l8h"]
-size = Vector2(8, 3)
+size = Vector2(6, 3)
 
 [sub_resource type="Animation" id="Animation_i405r"]
 length = 0.001
@@ -215,7 +216,6 @@ target_position = Vector2(-8, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_xfc4c")
-disabled = true
 
 [node name="ExplodeTrigger" type="Area2D" parent="."]
 collision_mask = 2
@@ -231,5 +231,7 @@ stream = ExtResource("4_qyk7q")
 libraries = {
 "": SubResource("AnimationLibrary_ypi4x")
 }
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("5_josu3")]
 
 [connection signal="body_entered" from="ExplodeTrigger" to="." method="_on_explode_trigger_body_entered"]
