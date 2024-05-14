@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c055352hdpy17"]
+[gd_scene load_steps=28 format=3 uid="uid://c055352hdpy17"]
 
 [ext_resource type="PackedScene" uid="uid://dbm5nfk155u3" path="res://scenes/player.tscn" id="1_efn1k"]
 [ext_resource type="Texture2D" uid="uid://b8r51roakk3cw" path="res://assets/sprites/world_tileset.png" id="2_o5r2l"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b700vtxncfk4f" path="res://scenes/purple_slime.tscn" id="7_ixc8o"]
 [ext_resource type="PackedScene" uid="uid://dbkbagbwaw7ge" path="res://scenes/coin.tscn" id="7_kkrbw"]
 [ext_resource type="PackedScene" uid="uid://cu6ajsq07eskn" path="res://scenes/fruits/fruit_yellow.tscn" id="9_4d38u"]
+[ext_resource type="PackedScene" uid="uid://dg5f0fsqeainl" path="res://scenes/levels/level_4.tscn" id="10_y1jww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aob6a"]
 texture = ExtResource("2_o5r2l")
@@ -879,3 +880,4 @@ position = Vector2(3022, 324)
 
 [node name="Fruit_yellow" parent="." instance=ExtResource("9_4d38u")]
 position = Vector2(3264, 323)
+target_level = ExtResource("10_y1jww")
