@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://xyf8kqaqbjwk"]
+[gd_scene load_steps=23 format=3 uid="uid://xyf8kqaqbjwk"]
 
 [ext_resource type="PackedScene" uid="uid://dbm5nfk155u3" path="res://scenes/player.tscn" id="1_3pb8n"]
 [ext_resource type="Texture2D" uid="uid://b8r51roakk3cw" path="res://assets/sprites/world_tileset.png" id="2_mvda7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dbkbagbwaw7ge" path="res://scenes/coin.tscn" id="4_2ctfm"]
 [ext_resource type="PackedScene" uid="uid://c88w2ntq4qmha" path="res://scenes/kill_zone.tscn" id="5_md0lt"]
 [ext_resource type="PackedScene" uid="uid://c42c8pvpytmys" path="res://scenes/enemies/green_slime.tscn" id="6_o1ek2"]
+[ext_resource type="PackedScene" uid="uid://ccf3k4eg63iqb" path="res://scenes/pause_menu.tscn" id="6_sjqva"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="7_03dpu"]
 [ext_resource type="FontFile" uid="uid://btfuq7we3twcg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_d8y80"]
 [ext_resource type="PackedScene" uid="uid://cu6ajsq07eskn" path="res://scenes/fruits/fruit_yellow.tscn" id="9_cmcw6"]
@@ -588,6 +589,8 @@ theme_override_font_sizes/font_size = 16
 text = "SLIMES: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PauseMenu" parent="GameManager/CanvasLayer" instance=ExtResource("6_sjqva")]
 
 [node name="Platforms" type="Node" parent="."]
 

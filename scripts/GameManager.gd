@@ -10,3 +10,6 @@ func add_slime_point():
 func add_point():
 	points += 1
 	$CanvasLayer/ScorePanel/ScoreText.text = "COINS: " + str(points)
+
+func _on_button_pressed():
+	$CanvasLayer/PauseMenu.pause()
