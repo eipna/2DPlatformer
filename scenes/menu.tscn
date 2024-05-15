@@ -6,10 +6,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usaq4"]
 bg_color = Color(1, 0.802612, 0.720955, 1)
-border_width_left = 12
-border_width_top = 12
-border_width_right = 12
-border_width_bottom = 12
 border_color = Color(1, 0.626469, 0.442048, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orml3"]
@@ -160,6 +156,22 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kpr4g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_18fn8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_owo3q")
 text = "QUIT"
+
+[node name="author" type="Label" parent="panel_menu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -27.0
+offset_right = 187.0
+offset_bottom = -4.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_douio")
+theme_override_font_sizes/font_size = 16
+text = "AUTHOR: VRIX"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="panel_menu/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="panel_menu/quit" to="." method="_on_quit_pressed"]
