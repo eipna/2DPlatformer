@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b700vtxncfk4f" path="res://scenes/enemies/purple_slime.tscn" id="8_bkc08"]
 [ext_resource type="PackedScene" uid="uid://chbyjlk88uhd" path="res://scenes/pause_button.tscn" id="8_pivy2"]
 [ext_resource type="PackedScene" uid="uid://cu6ajsq07eskn" path="res://scenes/fruits/fruit_yellow.tscn" id="9_4d38u"]
-[ext_resource type="PackedScene" uid="uid://dg5f0fsqeainl" path="res://scenes/levels/level_4.tscn" id="10_y1jww"]
+[ext_resource type="PackedScene" uid="uid://c3u04308b6wde" path="res://scenes/menu.tscn" id="13_60bl2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aob6a"]
 texture = ExtResource("2_o5r2l")
@@ -893,4 +893,4 @@ position = Vector2(3022, 324)
 
 [node name="Fruit_yellow" parent="." instance=ExtResource("9_4d38u")]
 position = Vector2(3264, 323)
-target_level = ExtResource("10_y1jww")
+target_level = ExtResource("13_60bl2")
