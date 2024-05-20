@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dg5f0fsqeainl"]
+[gd_scene load_steps=13 format=3 uid="uid://dg5f0fsqeainl"]
 
 [ext_resource type="PackedScene" uid="uid://dbm5nfk155u3" path="res://scenes/player.tscn" id="1_vbjr1"]
 [ext_resource type="Texture2D" uid="uid://b8r51roakk3cw" path="res://assets/sprites/world_tileset.png" id="2_ywbml"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="4_o5v5y"]
 [ext_resource type="FontFile" uid="uid://btfuq7we3twcg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_4mc5b"]
 [ext_resource type="PackedScene" uid="uid://ccf3k4eg63iqb" path="res://scenes/pause_menu.tscn" id="6_y4pcp"]
+[ext_resource type="PackedScene" uid="uid://c3tb3y7ii4wpp" path="res://scenes/touch_control.tscn" id="7_rrall"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aob6a"]
 texture = ExtResource("2_ywbml")
@@ -510,6 +511,8 @@ vertical_alignment = 1
 
 [node name="PauseMenu" parent="GameManager/CanvasLayer" instance=ExtResource("6_y4pcp")]
 visible = false
+
+[node name="TouchControl" parent="GameManager/CanvasLayer" instance=ExtResource("7_rrall")]
 
 [node name="Platforms" type="Node" parent="."]
 
