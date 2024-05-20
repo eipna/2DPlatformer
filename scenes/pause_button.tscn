@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://chbyjlk88uhd"]
+
+[ext_resource type="FontFile" uid="uid://btfuq7we3twcg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_p2d87"]
+[ext_resource type="Script" path="res://scenes/pause_button.gd" id="2_vbixc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sj1lg"]
+bg_color = Color(0.978937, 0.688013, 0.495618, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ybjg"]
+bg_color = Color(0.908906, 0.52072, 0.228984, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apj1q"]
+bg_color = Color(0.779655, 0.421816, 0.133051, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 8
+
+[node name="PauseButton" type="Button"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 56.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_p2d87")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_sj1lg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ybjg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_apj1q")
+text = "PAUSE"
+script = ExtResource("2_vbixc")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
