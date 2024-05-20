@@ -516,6 +516,10 @@ vertical_alignment = 1
 visible = false
 
 [node name="PauseButton" parent="GameManager/CanvasLayer" instance=ExtResource("8_yqcpo")]
+offset_left = -157.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 63.0
 
 [node name="Platforms" type="Node" parent="."]
 

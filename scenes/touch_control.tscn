@@ -15,17 +15,20 @@ grow_vertical = 2
 script = ExtResource("1_5acob")
 
 [node name="left" type="TouchScreenButton" parent="."]
-position = Vector2(115, 500)
+position = Vector2(115, 470)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("2_4gcni")
 action = "move_left"
 
 [node name="right" type="TouchScreenButton" parent="."]
-position = Vector2(265, 500)
+position = Vector2(295, 470)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3_rb47x")
 action = "move_right"
 
 [node name="jump" type="TouchScreenButton" parent="."]
-position = Vector2(900, 500)
+position = Vector2(205, 320)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("4_vwrnc")
 action = "jump"
 

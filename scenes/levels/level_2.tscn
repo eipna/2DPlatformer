@@ -595,6 +595,10 @@ vertical_alignment = 1
 [node name="PauseMenu" parent="GameManager/CanvasLayer" instance=ExtResource("6_2xuwn")]
 
 [node name="PauseButton" parent="GameManager/CanvasLayer" instance=ExtResource("6_c7der")]
+offset_left = -157.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 63.0
 
 [node name="Platforms" type="Node" parent="."]
 
