@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://xyf8kqaqbjwk"]
+[gd_scene load_steps=24 format=3 uid="uid://xyf8kqaqbjwk"]
 
 [ext_resource type="PackedScene" uid="uid://dbm5nfk155u3" path="res://scenes/player.tscn" id="1_3pb8n"]
 [ext_resource type="Texture2D" uid="uid://b8r51roakk3cw" path="res://assets/sprites/world_tileset.png" id="2_mvda7"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://ccf3k4eg63iqb" path="res://scenes/pause_menu.tscn" id="6_sjqva"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="7_03dpu"]
 [ext_resource type="FontFile" uid="uid://btfuq7we3twcg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_d8y80"]
-[ext_resource type="PackedScene" uid="uid://c3tb3y7ii4wpp" path="res://scenes/touch_control.tscn" id="7_qwdfw"]
 [ext_resource type="PackedScene" uid="uid://cu6ajsq07eskn" path="res://scenes/fruits/fruit_yellow.tscn" id="9_cmcw6"]
 [ext_resource type="PackedScene" uid="uid://dp5ro8ka66wfb" path="res://scenes/levels/level_2.tscn" id="10_lgr1d"]
 
@@ -553,12 +552,11 @@ script = ExtResource("7_03dpu")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="PauseButton" parent="GameManager/CanvasLayer" instance=ExtResource("6_6hnbf")]
+visible = false
 offset_left = -157.0
 offset_top = 15.0
 offset_right = -15.0
 offset_bottom = 63.0
-
-[node name="TouchControl" parent="GameManager/CanvasLayer" instance=ExtResource("7_qwdfw")]
 
 [node name="ScorePanel" type="Panel" parent="GameManager/CanvasLayer"]
 offset_left = 12.0

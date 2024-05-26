@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c055352hdpy17"]
+[gd_scene load_steps=30 format=3 uid="uid://c055352hdpy17"]
 
 [ext_resource type="PackedScene" uid="uid://dbm5nfk155u3" path="res://scenes/player.tscn" id="1_efn1k"]
 [ext_resource type="Texture2D" uid="uid://b8r51roakk3cw" path="res://assets/sprites/world_tileset.png" id="2_o5r2l"]
@@ -7,7 +7,6 @@
 [ext_resource type="FontFile" uid="uid://btfuq7we3twcg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_8o1ms"]
 [ext_resource type="PackedScene" uid="uid://cpbnv2o85ceam" path="res://scenes/platforms/platform_yellow.tscn" id="6_7kgxl"]
 [ext_resource type="PackedScene" uid="uid://ccf3k4eg63iqb" path="res://scenes/pause_menu.tscn" id="6_kikh8"]
-[ext_resource type="PackedScene" uid="uid://c3tb3y7ii4wpp" path="res://scenes/touch_control.tscn" id="7_f3ny3"]
 [ext_resource type="PackedScene" uid="uid://dbkbagbwaw7ge" path="res://scenes/coin.tscn" id="7_kkrbw"]
 [ext_resource type="PackedScene" uid="uid://b700vtxncfk4f" path="res://scenes/enemies/purple_slime.tscn" id="8_bkc08"]
 [ext_resource type="PackedScene" uid="uid://chbyjlk88uhd" path="res://scenes/pause_button.tscn" id="8_pivy2"]
@@ -626,12 +625,11 @@ script = ExtResource("4_sihve")
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
 [node name="PauseButton" parent="GameManager/CanvasLayer" instance=ExtResource("8_pivy2")]
+visible = false
 offset_left = -157.0
 offset_top = 15.0
 offset_right = -15.0
 offset_bottom = 63.0
-
-[node name="TouchControl" parent="GameManager/CanvasLayer" instance=ExtResource("7_f3ny3")]
 
 [node name="ScorePanel" type="Panel" parent="GameManager/CanvasLayer"]
 offset_left = 12.0
